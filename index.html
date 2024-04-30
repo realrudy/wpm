@@ -6,12 +6,27 @@
 
 <body>
  
-<span id="sentenceOutput"></span>
-    <br><br>
-    <input type="text" oninput="check();" id="usertyping"></input>   
+    <center>
+     
+        <div class="box"><br>
+            <span id="sentenceOutput"></span>
+<br>
+            <textarea type="text" onInput="check();" class="input" id="usertyping"></textarea>   
+        </div>
+      
+        <br><br>
+        <span id="timer"></span>
+<br>
+        <button onclick="location.reload();" > Reset </button>
+
+    </center>
+
+  
+
 </body>
 <script src="./main.js"></script>
 
+<script type="text/javascript" src="https://unpkg.com/txtgen/dist/txtgen.min.js"></script>
 
 
 </html>

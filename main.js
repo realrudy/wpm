@@ -3,16 +3,31 @@ let startTime = 0;
 let elapsedTime = 0;
 let timerInterval;
 let timerRunning;
-const sentence = 'a quick brown fox jumped over the lazy dog';
 
+const sentences = [
+"For the life of me, I can't figure out these outrageous new guidelines for fixing mistakes.",
+"He had a vague sense that trees gave birth to dinosaurs.",
+"A kangaroo is really just a rabbit on steroids.",
+"Facing his greatest fear, he ate his first marshmallow.",
+"You're unsure whether or not to trust him, but very thankful that you wore a turtle neck.",
+"The knives were out and she was sharpening hers."
+
+
+]
+
+const sentence = sentences[Math.round(Math.random(0,6))];
+const timer = document.getElementById('timer');
 
 function startTimer(){
     startTime = Date.now() - elapsedTime
     timerRunning = true;
     timerInterval = setInterval( ()=> {
         elapsedTime = Date.now() - startTime 
-        console.log(formatTimer(elapsedTime))
+        timer.innerText = formatTimer(elapsedTime);
+
+        // console.log(formatTimer(elapsedTime))
     }, 10)
+
 
 }
 
@@ -46,20 +61,37 @@ const sentenceP = document.getElementById("sentenceOutput");
 
 sentenceP.innerText = sentence;
 const usertyping = document.getElementById("usertyping");
-
+usertyping.placeholder = sentence;
 function check(){
     if(!timerRunning){
         startTimer();
     }
-    
+ 
     console.log(usertyping.value);
+    console.log(sentence);
+
     if(usertyping.value == sentence){
-    stopTimer();
-    wpm = WordCount(sentence) / (elapsedTime * 60000) ;
+end(1);
 
-        sentenceP.innerText = 'Typing duration = '+formatTimer(elapsedTime);
-        
+    } 
+else if (usertyping.value.length > sentence.length){
+        end(0);
     }
+function end(result){
+  if(result == 1){
+    usertyping.style.color = "#22bb33";
+    usertyping.disabled = true;
+stopTimer();
+wpm = WordCount(sentence) / ((elapsedTime / 1000)/60) ;
 
+sentenceP.innerText = 'WPM = '+Math.round(wpm)
+  } else if (result == 0){
+    usertyping.style.color = "red";
+    usertyping.disabled = true;
+stopTimer();
 
+sentenceP.innerText = 'INVALID TEST';
+  }
 }
+}
+
