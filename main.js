@@ -18,24 +18,6 @@ const sentences = [
 
 const sentence = sentences[Math.round(Math.random(0,6))];
 const timer = document.getElementById('timer');
-document.onkeydown = (e) => {
-    if (e.key == 123) {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.key == 'I') {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.key == 'C') {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.shiftKey && e.key == 'J') {
-        e.preventDefault();
-    }
-    if (e.ctrlKey && e.key == 'U') {
-        e.preventDefault();
-    }
-};
-
 
 function startTimer(){
     startTime = Date.now() - elapsedTime
@@ -82,6 +64,26 @@ sentenceP.innerText = sentence;
 const usertyping = document.getElementById("usertyping");
 
 window.onload = () => {
+
+    
+      document.addEventListener('contextmenu', event=> event.preventDefault()); 
+      document.onkeydown = function(e) { 
+      if(event.keyCode == 123) { 
+      return false; 
+      } 
+      if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){ 
+      return false; 
+      } 
+      if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){ 
+      return false; 
+      } 
+      if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){ 
+      return false; 
+      } 
+      } 
+
+
+    
  usertyping.onpaste = e => e.preventDefault();
 
      document.addEventListener('contextmenu', function(e) {
