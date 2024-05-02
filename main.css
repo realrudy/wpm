@@ -72,3 +72,8 @@ textarea:focus{
     text-align: center;
     
 }
+
+
+#cpsOutput{
+    transition: 0.4s;
+}
