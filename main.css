@@ -64,11 +64,11 @@ textarea:focus{
     background-color:inherit;
     color:inherit;
     border: inherit;   
-    height:100px;
+    height:300px;
     border-radius:50%;
     -moz-border-radius:50%;
     -webkit-border-radius:50%;
-    width:100px;
+    width:300px;
     text-align: center;
     
 }
