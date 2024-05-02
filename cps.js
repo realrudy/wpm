@@ -61,7 +61,13 @@ startTimer();
 
 if(Math.floor((elapsedTime % (1000 * 60)) / 1000) >= 5){
     stopTimer();
-    cpsOutput.innerText = 'CPS = '+ clicks/5
+    if(clicks/5 >= 6){
+            cpsOutput.innerText = 'CPS = '+ clicks/5 + ' (above average)';
+        cpsOutput.style.color = "green";
+    } else {
+             cpsOutput.innerText = 'CPS = '+ clicks/5 + ' (below average)';
+        cpsOutput.style.color = "red";
+    }
 disableClicker = true;
 }
 
