@@ -61,7 +61,7 @@ textarea:focus{
 }
 
 #clicker{
-    background-color:inherit;
+    background-color:#242424;
     color:inherit;
     border: inherit;   
     height:300px;
@@ -70,6 +70,7 @@ textarea:focus{
     -webkit-border-radius:50%;
     width:300px;
     text-align: center;
+    
     
 }
 
