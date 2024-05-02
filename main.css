@@ -17,8 +17,7 @@ body{
     width: 90%;
     height: 70%;
 color:white;
-text-align: left;
-text-align:initial;
+
 vertical-align: text-top;
 margin-top: 50px;
 }
@@ -59,4 +58,17 @@ textarea:focus{
 
 #timer{
     padding-top: 20px;
+}
+
+#clicker{
+    background-color:inherit;
+    color:inherit;
+    border: inherit;   
+    height:100px;
+    border-radius:50%;
+    -moz-border-radius:50%;
+    -webkit-border-radius:50%;
+    width:100px;
+    text-align: center;
+    
 }

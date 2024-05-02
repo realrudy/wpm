@@ -1,4 +1,3 @@
-
 // Timer code was used from Rahman Samadzade's github repo called Stopwatch_timer
 let startTime = 0;
 let elapsedTime = 0;
@@ -62,49 +61,6 @@ const sentenceP = document.getElementById("sentenceOutput");
 
 sentenceP.innerText = sentence;
 const usertyping = document.getElementById("usertyping");
-
-window.onload = () => {
-
-    
-      document.addEventListener('contextmenu', event=> event.preventDefault()); 
-      document.onkeydown = function(e) { 
-      if(event.keyCode == 123) { 
-      return false; 
-      } 
-      if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)){ 
-      return false; 
-      } 
-      if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)){ 
-      return false; 
-      } 
-      if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)){ 
-      return false; 
-      } 
-      } 
-
-
-    
- usertyping.onpaste = e => e.preventDefault();
-
-     document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
- });
- document.addEventListener('keydown', function(e) {
- if (event.keyCode == 123) {
-  return false;
- }
- if (e.ctrlKey && e.shiftKey) {
-  return false;
- }
- if (event.ctrlKey && event.keyCode == 85) {
-  return false;
- }
-});
-    
-}
-
-
-
 usertyping.placeholder = sentence;
 function check(){
     if(!timerRunning){
@@ -128,7 +84,10 @@ function end(result){
 stopTimer();
 wpm = WordCount(sentence) / ((elapsedTime / 1000)/60) ;
 
+
 sentenceP.innerText = 'WPM = '+Math.round(wpm)
+document.cookie = "WPM="+wpm;
+
   } else if (result == 0){
     usertyping.style.color = "red";
     usertyping.disabled = true;
@@ -139,3 +98,9 @@ sentenceP.innerText = 'INVALID TEST';
 }
 }
 
+
+var clicks = 0;
+function click(){
+    click++;
+    console.log(click)
+}

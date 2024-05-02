@@ -2,46 +2,39 @@
 <head>
 <link rel="stylesheet" href="main.css">
 <title>WPM Test</title>
+<style>
+    .box{
+        text-align: left;
+text-align:initial;
+    }
+</style>
 </head>
 
 <body>
  
     <center>
-     <h1>WPM Speed Test</h1><p>Made by Rudy</p>
+     
         <div class="box"><br>
-            <span id="sentenceOutput" inert></span>
+            <span id="sentenceOutput"></span>
 <br>
             <textarea type="text" onInput="check();" class="input" id="usertyping"></textarea>   
         </div>
       
         <br><br>
         <span id="timer"></span>
-<br>
-        <button onclick="location.reload();" > Reset </button>
+<br><button onclick="location.reload();" > Reset </button><br>
+<a href="./cps.html">CPS TEST</a>
+
 
     </center>
 
-  
+    
+
 
 </body>
 <script src="./main.js"></script>
-<script src="./devtools.js"></script>
 
 <script type="text/javascript" src="https://unpkg.com/txtgen/dist/txtgen.min.js"></script>
 
-<script type="module">
-import devtools from './node_modules/devtools-detect/index.js';
 
-// Check if it's open
-console.log('Is DevTools open:', devtools.isOpen);
-
-// Check it's orientation, `undefined` if not open
-console.log('DevTools orientation:', devtools.orientation);
-
-// Get notified when it's opened/closed or orientation changes
-window.addEventListener('devtoolschange', event => {
-	console.log('Is DevTools open:', event.detail.isOpen);
-	console.log('DevTools orientation:', event.detail.orientation);
-});
-</script>
 </html>
