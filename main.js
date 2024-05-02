@@ -1,3 +1,4 @@
+
 // Timer code was used from Rahman Samadzade's github repo called Stopwatch_timer
 let startTime = 0;
 let elapsedTime = 0;
@@ -61,6 +62,13 @@ const sentenceP = document.getElementById("sentenceOutput");
 
 sentenceP.innerText = sentence;
 const usertyping = document.getElementById("usertyping");
+
+window.onload = () => {
+ usertyping.onpaste = e => e.preventDefault();
+}
+
+
+
 usertyping.placeholder = sentence;
 function check(){
     if(!timerRunning){
