@@ -13,6 +13,10 @@ function startTimer(){
     startTime = Date.now() - elapsedTime
     timerRunning = 'started';
     timerInterval = setInterval( ()=> {
+        function antiCheat(){
+            console.log('nuh uh');
+        }
+        antiCheat();
         elapsedTime = Date.now() - startTime 
         timer.innerText = formatTimer(elapsedTime);
 
@@ -41,7 +45,6 @@ function formatTimer(elapsedTime){
 }
 
  
-
 
 
 
