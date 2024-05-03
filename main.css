@@ -88,6 +88,6 @@ padding:16px;
 }
 
 #clicker:active{
-    transition:0.2s;
-    border: 3px solid white;
+    transition:0.09s;
+    border: 5px solid white;
 }
