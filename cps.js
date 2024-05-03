@@ -1,3 +1,7 @@
+$(document).bind("contextmenu",function(e) {
+ e.preventDefault();
+});
+
 // Timer code was used from Rahman Samadzade's github repo called Stopwatch_timer
 let startTime = 0;
 let elapsedTime = 0;
