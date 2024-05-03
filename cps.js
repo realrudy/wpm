@@ -55,7 +55,8 @@ if(!timerRunning){
 startTimer();
 } else {
     if(disableClicker) return;
-// cpsOutput.innerText = clicks + ' clicks';
+    click++;
+cpsOutput.innerText = clicks + ' clicks';
     console.log(clicks)
 }
 
