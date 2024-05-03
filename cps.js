@@ -3,7 +3,7 @@ let startTime = 0;
 let elapsedTime = 0;
 let timerInterval;
 let timerRunning;
-
+let anticheatnum = 0;
 
 
 const cpsOutput = document.getElementById('cpsOutput');
@@ -14,7 +14,8 @@ function startTimer(){
     timerRunning = 'started';
     timerInterval = setInterval( ()=> {
         function antiCheat(){
-            console.log('nuh uh');
+            anticheatnum++;
+            console.log('nuh uh '+anticheatnum);
         }
         antiCheat();
         elapsedTime = Date.now() - startTime 
