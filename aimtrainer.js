@@ -22,7 +22,7 @@ function moveTarget() {
     if(clicks >= 15 ){
         stopTimer();
         target.style.display = 'none';
-        clickOutput.innerText = 'Your click time per target is 'clicks/seconds+'s'
+        clickOutput.innerText = 'Your click time per target is '+clicks/seconds+'s'
     }
 
 }
